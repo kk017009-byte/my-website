@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>作品集 - 發芽工作室</title>
+  <style>
+    :root{--maxw:1000px}
+    *{box-sizing:border-box}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      line-height:1.6;margin:0;color:#fff;
+      background: #444444; /* 單色工業灰背景 */
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:24px;
+    }
+    h2{margin-bottom:12px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-top:12px;
+    }
+    .grid img{
+      width:100%;
+      border-radius:8px;
+      cursor:pointer;
+      transition: transform 0.3s ease;
+    }
+    .grid img:hover{
+      transform: scale(1.05);
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:8px;
+      text-decoration:none;
+      background:#111;
+      color:#fff;
+      margin:6px;
+    }
+
+    /* Lightbox */
+    #lightboxOverlay{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+      flex-direction:column;
+    }
+    #lightboxOverlay img{
+      max-width:90%;
+      max-height:80%;
+      border-radius:8px;
+      margin-bottom:12px;
+    }
+    #lightboxOverlay .navArrows{
+      display:flex;
+      justify-content:space-between;
+      width:90%;
+      max-width:800px;
+    }
+    #lightboxOverlay .navArrows span{
+      font-size:2rem;
+      color:#fff;
+      cursor:pointer;
+      user-select:none;
+      padding:0 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>作品集</h2>
+    <a class="btn" href="index.html">返回首頁</a>
+    <div class="grid" id="worksGrid"></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+    <div class="navArrows">
+      <span id="prev">&#10094;</span>
+      <span id="next">&#10095;</span>
+    </div>
+  </div>
+
+  <script>
+    const worksGrid = document.getElementById('worksGrid');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    const totalWorks = 61; 
+    const images = [];
+
+    // 自動生成縮圖
+    for(let i=1;i<=totalWorks;i++){
+      const img = document.createElement('img');
+      img.src = `images/work${i}.jpg`; // images 資料夾
+      img.alt = `作品 ${i}`;
+      img.dataset.index = i-1;
+      img.addEventListener('click', ()=>{
+        currentIndex = parseInt(img.dataset.index);
+        showLightbox(currentIndex);
+      });
+      worksGrid.appendChild(img);
+      images.push(img.src);
+    }
+
+    let currentIndex = 0;
+
+    function showLightbox(index){
+      lightboxImg.src = images[index];
+      lightboxOverlay.style.display = 'flex';
+    }
+
+    function hideLightbox(){
+      lightboxOverlay.style.display = 'none';
+    }
+
+    function prevImage(){
+      currentIndex = (currentIndex - 1 + totalWorks) % totalWorks;
+      showLightbox(currentIndex);
+    }
+
+    function nextImage(){
+      currentIndex = (currentIndex + 1) % totalWorks;
+      showLightbox(currentIndex);
+    }
+
+    // 點擊覆蓋層空白區關閉
+    lightboxOverlay.addEventListener('click', e=>{
+      if(e.target === lightboxOverlay) hideLightbox();
+    });
+
+    // 左右箭頭
+    prevBtn.addEventListener('click', e=>{ e.stopPropagation(); prevImage(); });
+    nextBtn.addEventListener('click', e=>{ e.stopPropagation(); nextImage(); });
+
+    // 鍵盤操作
+    document.addEventListener('keydown', e=>{
+      if(lightboxOverlay.style.display === 'flex'){
+        if(e.key === "Escape") hideLightbox();
+        if(e.key === "ArrowLeft") prevImage();
+        if(e.key === "ArrowRight") nextImage();
+      }
+    });
+  </script>
+</body>
+</html>

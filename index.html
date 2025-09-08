@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>發芽工作室</title>
+  <meta name="description" content="冷氣保養與維護服務">
+  <style>
+    :root{--maxw:1000px}
+    *{box-sizing:border-box}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      line-height:1.6;margin:0;color:#fff;
+      background: #444444; /* 單色工業灰背景 */
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:24px;
+    }
+    .header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .nav a{margin-left:14px;text-decoration:none;color:#fff;font-weight:600}
+    .hero{padding:44px 0;text-align:center}
+    h1,h2,h3,h4{margin:0 0 12px}
+    p{margin:0 0 12px}
+    .btn{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;background:#111;color:#fff;margin:6px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
+    .card{
+      padding:14px;
+      border-radius:8px;
+      border:1px solid #666;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+    }
+    .footer{padding:24px 0;text-align:center;font-size:0.9rem;color:#ccc;border-top:1px solid #666;margin-top:40px}
+    @media (max-width:600px){.header{flex-direction:column;align-items:flex-start}.nav a{margin:8px 8px 0 0}}
+  </style>
+</head>
+<body>
+  <header class="container header">
+    <div>
+      <h1 style="font-size:1.25rem">發芽工作室</h1>
+      <div style="font-size:0.9rem;color:#ccc">細心、用心、耐心</div>
+    </div>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="#home">首頁</a>
+      <a href="#about">關於</a>
+      <a href="#services">服務</a>
+      <a href="works.html">作品集</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <h2>發芽工作室 - 冷氣保養與維護</h2>
+      <p>LINE@搜尋 : @958qlabq</p>
+      <a class="btn" href="#contact">聯絡我們</a>
+    </section>
+
+    <section id="about" class="card">
+      <h3>關於我們</h3>
+      <p>目前為個人工作室，主業冷氣安裝保養<br>
+服務時間是平日18點後及假日，讓您不用請假在家👍</p>
+      <p>另協助家庭水電修繕，如水龍頭、插座、開關、吸頂燈、電視架、健身器材、衛浴設備…等，價格可議😉</p>
+    </section>
+
+    <section id="services" class="card">
+      <h3>服務項目</h3>
+      <div class="grid">
+        <article class="card"><h4>服務一</h4><p>壁掛(分離)式冷氣拆/掛洗</p></article>
+        <article class="card"><h4>服務二</h4><p>隱藏式/箱型機清洗(沒有洗管服務)</p></article>
+        <article class="card"><h4>服務三</h4><p>窗型冷氣拆洗</p></article>
+        <article class="card"><h4>服務四</h4><p>家庭水電更換/安裝</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>聯絡我們</h3>
+      <p>點擊以下按鈕即可聯絡我們：</p>
+      <a class="btn" href="https://www.facebook.com/profile.php?id=61573705044525&locale=zh_TW" target="_blank">FB 粉專</a>
+      <a class="btn" href="https://share.google/dir4t7mLXKO343ZYZ" target="_blank">Google Map</a>
+      <a class="btn" href="https://lin.ee/Xc9sXDr" target="_blank">LINE</a>
+    </section>
+
+    <footer class="footer">
+      © 2025 發芽工作室
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          const el = document.querySelector(id);
+          if(el) el.scrollIntoView({behavior:'smooth'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
