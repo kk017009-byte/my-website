@@ -1,39 +1,41 @@
-
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>發芽工作室</title>
-  <meta name="description" content="冷氣保養與維護服務">
+
+  <title>發芽工作室 - 冷氣保養與維護、家庭水電服務</title>
+  <meta name="description" content="發芽工作室提供專業冷氣拆洗、冷氣維護及家庭水電安裝、更換服務。服務區域：彰化、台中，細心、用心、耐心。">
+  <meta name="keywords" content="冷氣保養,冷氣拆洗,家庭水電,插座安裝,水龍頭維修,台中,彰化">
+  <meta name="robots" content="index, follow">
+
   <style>
     :root{--maxw:1000px}
     *{box-sizing:border-box}
-    body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      line-height:1.6;margin:0;color:#fff;
-      background: #444444; /* 單色工業灰背景 */
-    }
-    .container{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:24px;
-    }
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.6;margin:0;color:#fff;background:#444;}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
     .header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
     .nav a{margin-left:14px;text-decoration:none;color:#fff;font-weight:600}
     .hero{padding:44px 0;text-align:center}
     h1,h2,h3,h4{margin:0 0 12px}
     p{margin:0 0 12px}
-    .btn{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;background:#111;color:#fff;margin:6px}
+    .btn{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;background:#111;color:#fff;transition:0.3s;margin:4px;}
+    .btn:hover{background:#333}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
-    .card{
-      padding:14px;
-      border-radius:8px;
-      border:1px solid #666;
-      background: rgba(0,0,0,0.3);
-      color: #fff;
-    }
+    .card{padding:14px;border-radius:8px;border:1px solid #666;background:#555}
     .footer{padding:24px 0;text-align:center;font-size:0.9rem;color:#ccc;border-top:1px solid #666;margin-top:40px}
+    .contact-list { list-style:none; padding:0; }
+    .contact-list li { margin:10px 0; }
+    .contact-list a {
+      text-decoration:none;
+      color:#fff;
+      background:#111;
+      padding:8px 16px;
+      border-radius:8px;
+      display:inline-block;
+      transition:0.3s;
+    }
+    .contact-list a:hover { background:#333; }
     @media (max-width:600px){.header{flex-direction:column;align-items:flex-start}.nav a{margin:8px 8px 0 0}}
   </style>
 </head>
@@ -48,40 +50,41 @@
       <a href="#about">關於</a>
       <a href="#services">服務</a>
       <a href="works.html">作品集</a>
-      <a href="#contact">聯絡我們</a>
+      <a href="#contact">聯絡</a>
     </nav>
   </header>
 
   <main class="container">
     <section id="home" class="hero">
       <h2>發芽工作室 - 冷氣保養與維護</h2>
-      <p>LINE@搜尋 : @958qlabq</p>
-      <a class="btn" href="#contact">聯絡我們</a>
+      <p>你可以透過以下方式聯絡我們：</p>
+      <a class="btn" href="https://lin.ee/Xc9sXDr" target="_blank">加 LINE 聯絡我們</a>
+      <a class="btn" href="works.html">作品集</a>
     </section>
 
-    <section id="about" class="card">
+    <section id="about">
       <h3>關於我們</h3>
-      <p>目前為個人工作室，主業冷氣安裝保養<br>
-服務時間是平日18點後及假日，讓您不用請假在家👍</p>
-      <p>另協助家庭水電修繕，如水龍頭、插座、開關、吸頂燈、電視架、健身器材、衛浴設備…等，價格可議😉</p>
+      <p>目前為個人工作室，主業冷氣安裝保養。服務時間為平日18點後及假日，讓您不用配合一般電器行請假在家。</p>
+      <p>另協助家庭水電修繕，如水龍頭、插座、開關、吸頂燈安裝，電視架、健身器材、衛浴設備等。價格依需求協商，可自備材料。</p>
     </section>
 
-    <section id="services" class="card">
+    <section id="services">
       <h3>服務項目</h3>
       <div class="grid">
-        <article class="card"><h4>服務一</h4><p>壁掛(分離)式冷氣拆/掛洗</p></article>
-        <article class="card"><h4>服務二</h4><p>隱藏式/箱型機清洗(沒有洗管服務)</p></article>
-        <article class="card"><h4>服務三</h4><p>窗型冷氣拆洗</p></article>
-        <article class="card"><h4>服務四</h4><p>家庭水電更換/安裝</p></article>
+        <div class="card"><h4>冷氣拆洗</h4><p>壁掛式、窗型、箱型冷氣拆洗服務。</p></div>
+        <div class="card"><h4>冷氣維護</h4><p>冷氣保養及簡易故障維修。</p></div>
+        <div class="card"><h4>家庭水電</h4><p>插座、開關、水龍頭、燈具安裝與更換。</p></div>
       </div>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact">
       <h3>聯絡我們</h3>
-      <p>點擊以下按鈕即可聯絡我們：</p>
-      <a class="btn" href="https://www.facebook.com/profile.php?id=61573705044525&locale=zh_TW" target="_blank">FB 粉專</a>
-      <a class="btn" href="https://share.google/dir4t7mLXKO343ZYZ" target="_blank">Google Map</a>
-      <a class="btn" href="https://lin.ee/Xc9sXDr" target="_blank">LINE</a>
+      <p>你可以透過以下方式聯絡我們：</p>
+      <ul class="contact-list">
+        <li><a href="https://www.facebook.com/profile.php?id=61573705044525&locale=zh_TW" target="_blank">Facebook 粉絲專頁</a></li>
+        <li><a href="https://lin.ee/Xc9sXDr" target="_blank">LINE</a></li>
+        <li><a href="https://share.google/dir4t7mLXKO343ZYZ" target="_blank">Google 地圖</a></li>
+      </ul>
     </section>
 
     <footer class="footer">
@@ -93,11 +96,7 @@
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const id = a.getAttribute('href');
-        if(id.length>1){
-          e.preventDefault();
-          const el = document.querySelector(id);
-          if(el) el.scrollIntoView({behavior:'smooth'});
-        }
+        if(id.length>1){ e.preventDefault(); const el=document.querySelector(id); if(el) el.scrollIntoView({behavior:'smooth'});}
       });
     });
   </script>
